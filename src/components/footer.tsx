@@ -21,7 +21,7 @@ export function Footer() {
           </h2>
           <ul className="mt-4 space-y-2 text-sm">
             <li>
-              <Link className="hover:text-bronze" href="/#servizi">
+              <Link className="hover:text-bronze" href="/servizi">
                 Servizi
               </Link>
             </li>

@@ -7,7 +7,7 @@ import { site } from "@/lib/data";
 
 const links = [
   { href: "/#area", label: "L'area" },
-  { href: "/#servizi", label: "Servizi" },
+  { href: "/servizi", label: "Servizi" },
   { href: "/#escursioni", label: "Escursioni" },
   { href: "/#noleggio", label: "Noleggio" },
   { href: "/#recensioni", label: "Recensioni" },

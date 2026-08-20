@@ -23,24 +23,32 @@ export const amenities = [
     icon: "waves",
     title: "Spiaggia a 3 passi",
     text: "Accesso diretto alla sabbia e al Mar Ionio, senza attraversare strade.",
+    image: "/images/hero-ionio.jpg",
+    imageAlt: "Spiaggia ionica a pochi passi dalle piazzole",
   },
   {
     id: "stalli",
     icon: "pitch",
     title: "36 piazzole attrezzate",
     text: "Spazi ampi e in piano, con acqua potabile ed elettricità in ogni stallo.",
+    image: "/images/hero_i_bronzi.png",
+    imageAlt: "Camper in sosta a I Bronzi, sul Mar Ionio",
   },
   {
     id: "docce",
     icon: "shower",
     title: "Docce calde",
     text: "Gettone da 0,50 €. Docce fredde gratuite e lavandini per stoviglie.",
+    image: "/images/lungomare.jpg",
+    imageAlt: "Passeggiata sul lungomare ionico vicino alla sosta",
   },
   {
     id: "service",
     icon: "plug",
     title: "Camper service",
     text: "Carico e scarico acque, bagni, lavatrice e illuminazione notturna.",
+    image: "/images/le-castella.jpg",
+    imageAlt: "Costa ionica e servizi a pochi minuti dalla sosta",
   },
 ] as const;
 

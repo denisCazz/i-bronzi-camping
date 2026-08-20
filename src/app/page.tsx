@@ -3,13 +3,10 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { AddToBookingLink } from "@/components/add-to-booking";
 import { BookingForm } from "@/components/booking-form";
-import { Icon } from "@/components/icons";
+import { ServicesPreview } from "@/components/services";
 import {
-  amenities,
-  extraServices,
   excursions,
   gallery,
-  includedServices,
   rentals,
   reviews,
   site,
@@ -21,7 +18,7 @@ export default function Home() {
       <Hero />
       <Marquee />
       <About />
-      <Services />
+      <ServicesPreview />
       <Excursions />
       <Rentals />
       <Gallery />
@@ -36,11 +33,11 @@ function Hero() {
   return (
     <section className="relative isolate min-h-[92svh] overflow-hidden bg-sea-deep text-cream">
       <Image
-        src="/images/hero-ionio.jpg"
-        alt="Spiaggia della Costa dei Gelsomini, Calabria ionica"
+        src="/images/hero_i_bronzi.png"
+        alt="I Bronzi di Riace accanto a un camper, con il Mar Ionio sullo sfondo"
         fill
         priority
-        className="object-cover"
+        className="object-cover object-[center_70%]"
         sizes="100vw"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-sea-deep/60 via-sea-deep/25 to-sea-deep/85" />
@@ -67,7 +64,7 @@ function Hero() {
               Prenota la sosta
             </Link>
             <Link
-              href="#servizi"
+              href="/servizi"
               className="rounded-full border border-ink/15 bg-white px-6 py-3 text-[0.8rem] font-semibold uppercase tracking-[0.16em] text-ink hover:border-ink/30"
             >
               Scopri i servizi
@@ -173,82 +170,6 @@ function Stat({ k, v }: { k: string; v: string }) {
       <dt className="text-[0.68rem] uppercase tracking-[0.18em] text-ink-soft">{k}</dt>
       <dd className="mt-1 font-serif text-3xl">{v}</dd>
     </div>
-  );
-}
-
-function Services() {
-  return (
-    <section id="servizi" className="scroll-mt-24 bg-foam py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
-          <div className="max-w-2xl">
-            <p className="text-[0.72rem] uppercase tracking-[0.28em] text-sea">
-              Servizi
-            </p>
-            <h2 className="mt-3 font-serif text-5xl text-ink">
-              Tutto quello che serve a un camperista.
-            </h2>
-          </div>
-          <p className="max-w-md text-ink-soft">
-            Tariffa chiara, servizi in piazzola, spiaggia attaccata. Niente
-            sorprese: incluso e extra sono distinti.
-          </p>
-        </div>
-
-        <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {amenities.map((item) => (
-            <li
-              key={item.id}
-              className="rounded-3xl bg-white p-6 shadow-[0_10px_40px_rgba(13,79,99,0.06)] ring-1 ring-sea/8"
-            >
-              <span className="grid size-12 place-items-center rounded-2xl bg-foam text-sea">
-                <Icon name={item.icon} className="size-6" />
-              </span>
-              <h3 className="mt-5 text-lg font-semibold tracking-tight">{item.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-ink-soft">{item.text}</p>
-            </li>
-          ))}
-        </ul>
-
-        <div className="mt-8 grid gap-4 lg:grid-cols-5">
-          <div className="rounded-3xl bg-white p-6 ring-1 ring-sea/8 sm:p-8 lg:col-span-3">
-            <p className="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-sea">
-              Incluso nella sosta
-            </p>
-            <ul className="mt-5 grid gap-3 sm:grid-cols-2">
-              {includedServices.map((s) => (
-                <li key={s.title} className="flex items-start gap-3">
-                  <span className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-full bg-foam text-sea">
-                    <Icon name="check" className="size-3.5" />
-                  </span>
-                  <span>
-                    <span className="block text-sm font-medium text-ink">{s.title}</span>
-                    <span className="text-sm text-ink-soft">{s.detail}</span>
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="rounded-3xl bg-sea p-6 text-cream sm:p-8 lg:col-span-2">
-            <p className="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-bronze">
-              Extra a pagamento
-            </p>
-            <ul className="mt-5 space-y-4">
-              {extraServices.map((s) => (
-                <li
-                  key={s.title}
-                  className="flex items-baseline justify-between gap-4 border-b border-white/10 pb-3 last:border-0 last:pb-0"
-                >
-                  <span className="font-medium">{s.title}</span>
-                  <span className="shrink-0 text-sm text-cream/70">{s.detail}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
   );
 }
 
